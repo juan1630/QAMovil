@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start" >Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  #formulario="ngForm" (ngSubmit)="registro( formulario )" >
+  
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4" ></ion-col>
+      <ion-col size="8" >
+
+        <img src="assets/images/img2.png" class="img-fluid" >
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list>
+  <ion-grid>
+    <ion-row>
+    <ion-col size="6" >
+        <ion-item>
+          <ion-input type="text" placeholder="Nombre" [(ngModel)]="newUser.nombre" name="nombre">  </ion-input>
+        </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-item>
+          <ion-input type="text" placeholder="ApellidoPaterno"  name="apellidoPaterno" [(ngModel)]="newUser.apellidoPaterno" ></ion-input>
+        </ion-item>
+    </ion-col>
+    </ion-row>
+
+
+<ion-row>
+  <ion-col size="6" >
+    <ion-item>
+      <ion-input type="text" placeholder="Apellido Materno" name="apellidoMaterno" [(ngModel)]="newUser.apellidoMaterno"></ion-input>
+    </ion-item>
+    
+  </ion-col>
+
+  <ion-col size="6" >
+  
+  <ion-item>
+      <ion-input type="text" name="institucion" placeholder="Institucion" [(ngModel)]="newUser.institucion"></ion-input>
+    </ion-item>
+  </ion-col>
+
+</ion-row>
+
+<ion-row>
+  <ion-col size="6" >
+    <ion-item>
+      <ion-input type="email"  name="correo" placeholder="Correo" [(ngModel)]="newUser.correo"></ion-input>
+  </ion-item>
+  </ion-col>
+
+  <ion-col size="6" >
+  <ion-item>
+    <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="newUser.password"></ion-input>
+  </ion-item>
+
+  </ion-col>
+</ion-row>
+  
+<ion-row>
+  <ion-col size="6">
+    <ion-item>
+      <ion-input type="email" placeholder="Confirm password"></ion-input>
+    </ion-item>
+    
+  </ion-col>
+</ion-row>
+</ion-grid>
+
+</ion-list>
+
+
+  <ion-button type="submit"  color="success"  expand="block" fill="solid" shape="round">
+    Hecho
+  </ion-button>
+</form>
+
+</ion-content>
