@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Contesta tu pregunta
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-text>
+        <h1 class="center"> Aca irá la pregunta </h1>
+    </ion-text>
+
+    <form action="">
+
+        <ion-grid fixed>
+            <ion-row>
+                <ion-col size="1"></ion-col>
+                <ion-col size="9">
+                    <ion-list>
+                        <ion-item>
+                            <ion-label position="floating">Qué es una varibale?</ion-label>
+                            <ion-input type="text" name="pregunta1" [(ngModel)]="respuestas.pregunta1" placeholder="Respuesta..."></ion-input>
+                        </ion-item>
+
+
+                        <ion-item>
+                            <ion-label position="floating">¿Qué es una constante?</ion-label>
+                            <ion-input type="text" name="pregunta2" [(ngModel)]="respuestas.pregunta2" placeholder="Respuesta..."></ion-input>
+                        </ion-item>
+
+
+                        <ion-item>
+                            <ion-label position="floating">Decalra una variable en JS</ion-label>
+                            <ion-input type="text" name="pregunta2" [(ngModel)]="respuestas.pregunta3" placeholder="Respuesta..."></ion-input>
+                        </ion-item>
+                    </ion-list>
+
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col size="2"></ion-col>
+                <ion-col size="5">
+                    <ion-button (click)="enviar()" color="success" expand="block">
+                        Enviar
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+
+    </form>
+
+
+</ion-content>

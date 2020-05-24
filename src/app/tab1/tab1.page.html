@@ -1,20 +1,19 @@
-
 <ion-content>
-  <img src="assets/images/img2.png" alt="" class="logo" srcset="">
-  <form  #f="ngForm" >
-    <ion-list>
-      <ion-item>
-          <ion-input type="email" name="email"  [(ngModel)]="usuario.email" placeholder="Email"></ion-input>
-  
-      </ion-item>
-      <ion-item>
-        <ion-input type="password"  name="password" [(ngModel)]="usuario.password" placeholder="Password"></ion-input>
-      </ion-item>
-    </ion-list>
-    <a  class="center" > Crea una cuenta </a>
-    <ion-button color="success" expand="block" fill="solid" shape="round" (click)="ingresar( f )" >
-      Ingresar
-    </ion-button>
+    <img src="assets/images/img2.png" alt="" class="logo" srcset="">
+    <form #f="ngForm">
+        <ion-list>
+            <ion-item>
+                <ion-input type="email" name="email" [(ngModel)]="usuario.email" placeholder="Email"></ion-input>
 
-  </form>
+            </ion-item>
+            <ion-item>
+                <ion-input type="password" name="password" [(ngModel)]="usuario.password" placeholder="Password"></ion-input>
+            </ion-item>
+        </ion-list>
+        <a class="center" [routerLink]="['registro']"> Crea una cuenta </a>
+        <ion-button color="success" expand="block" fill="solid" shape="round" (click)="ingresar( )">
+            Ingresar
+        </ion-button>
+
+    </form>
 </ion-content>

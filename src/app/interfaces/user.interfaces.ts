@@ -4,7 +4,8 @@ export class User {
         public nombre: string,
         public apellidoPaterno: string,
         public apellidoMaterno: string,
-        public institucion: string,
+        public instituto: string,
+        public email:String,
         public password: string
      ) {
 

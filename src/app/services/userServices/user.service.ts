@@ -10,11 +10,15 @@ import { map } from 'rxjs/operators';
 export class UserService {
 
   constructor( 
-        private _http:HttpClient
+        public _http:HttpClient
    ) { }
 
+// creacion de un nuevo usuario
 
-   nuevoUser ( user ){
+   nuevoUser ( user: any ){
+
+      console.log( user );
+      
      let url = `${URL}/nuevo/usuario`;
 
      return this._http.post(url, user )
@@ -22,6 +26,30 @@ export class UserService {
         console.log( data );
         return data;
      } ) )
+   }
+  
+
+   verUsuarios(){
+    
+     let url = `${URL}/usuarios`;
+
+     return this._http.get( url);
+
+   }
+
+   verUsuarioPorId( id ){
+  
+    let url = `${URL}/usuario/${id}`;
+    return this._http.get(url);
+   
+  }
+
+
+
+   cambiarContrasenia(id, body ) {
+    let url = `${URL}/usuario/edit/${id}`;
+
+    return this._http.put(url, body);
    }
 
 

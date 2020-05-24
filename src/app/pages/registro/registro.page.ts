@@ -12,12 +12,12 @@ export class RegistroPage implements OnInit {
  
   public newUserDB:User[]=[];
   
-  public newUser = {
+  public newUser: User = {
     nombre:'',
     apellidoPaterno: '',
     apellidoMaterno:'',
-    institucion: '',
-    correo:'',
+    instituto: '',
+    email:'',
     password:''
   }
 
@@ -34,8 +34,9 @@ export class RegistroPage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Alerta',
       subHeader: 'Ijole yo creo que no se va a poder',
-      message: 'Falta por llenar un campo, no seas wey xD',
-      buttons: ['OK']
+      message: 'Falta por llenar un campo, no seas wey xD', 
+      buttons: ['OK'],
+      // type:'ios'
     });
 
     await alert.present();
@@ -43,16 +44,18 @@ export class RegistroPage implements OnInit {
 
   registro( formulario  ){
 
-    this.userService.nuevoUser( this.newUser )
-    .subscribe( (user:any)  => {
-        this.newUserDB = user.usuario;
-    });              
-
-    if( formulario.value ){
+    if( !formulario.valid ){
       this.presentAlert();
       return;
     }
   
+
+    this.userService.nuevoUser( this.newUser )
+    .subscribe( (user:any)  => {
+      console.log( user );
+        this.newUserDB = user.usuario;
+    });              
+
   }
 
 }

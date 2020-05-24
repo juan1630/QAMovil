@@ -12,13 +12,17 @@ export class LoginService {
    ) { }
 
 
-
+ 
    login( user ) {
 
       let url = `${URL}/login`;
       
-      
+   return  this._http.post(url, user);
 
+   }
+
+   logout() {
+      localStorage.removeItem('user');
    }
 
 
